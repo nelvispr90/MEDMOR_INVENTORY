@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-section-heading" data-cy="SectionCreateUpdateHeading" jhiTranslate="medmorInventoryApp.section.home.createOrEditLabel">
+        Create or edit a Section
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="medmorInventoryApp.section.area" for="field_area">Area</label>
+          <input type="number" class="form-control" name="area" id="field_area" data-cy="area" formControlName="area" />
+          <div *ngIf="editForm.get('area')!.invalid && (editForm.get('area')!.dirty || editForm.get('area')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('area')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('area')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="medmorInventoryApp.section.productType" for="field_productType"
+            >Product Type</label
+          >
+          <select class="form-control" name="productType" formControlName="productType" id="field_productType" data-cy="productType">
+            <option [ngValue]="null">{{ 'medmorInventoryApp.ProductType.null' | translate }}</option>
+            <option value="Electric_Materials">{{ 'medmorInventoryApp.ProductType.Electric_Materials' | translate }}</option>
+            <option value="Equipment">{{ 'medmorInventoryApp.ProductType.Equipment' | translate }}</option>
+            <option value="Locksmith">{{ 'medmorInventoryApp.ProductType.Locksmith' | translate }}</option>
+            <option value="Tools">{{ 'medmorInventoryApp.ProductType.Tools' | translate }}</option>
+            <option value="Plumbing">{{ 'medmorInventoryApp.ProductType.Plumbing' | translate }}</option>
+          </select>
+          <div *ngIf="editForm.get('productType')!.invalid && (editForm.get('productType')!.dirty || editForm.get('productType')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('productType')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

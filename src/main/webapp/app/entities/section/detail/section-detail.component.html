@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="section">
+      <h2 data-cy="sectionDetailsHeading"><span jhiTranslate="medmorInventoryApp.section.detail.title">Section</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ section.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="medmorInventoryApp.section.area">Area</span></dt>
+        <dd>
+          <span>{{ section.area }}</span>
+        </dd>
+        <dt><span jhiTranslate="medmorInventoryApp.section.productType">Product Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'medmorInventoryApp.ProductType.' + section.productType }}">{{ section.productType }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/section', section.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

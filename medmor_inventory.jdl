@@ -1,5 +1,5 @@
 enum ProductType {
-    Electric Materials, Equipment, Locksmith, Tools, Plumbing
+    Electric_Materials, Equipment, Locksmith, Tools, Plumbing
 }
 enum ContainerType {
     Cardboard, Plastic, Glass, Nylon
@@ -9,27 +9,27 @@ enum ProductSize {
 }
 entity Section {
     area Float required,
-    productType ProductType required unique, 
+    productType ProductType required unique
 }
-
 entity Product {
     productSize ProductSize required,
     color String required,
     price Float required,
     fragile Boolean required,
-    lote  String required pattern(/^[a-zA-Z0-9_]*$/),
-    containerType ContainerType,
+    lote String required  pattern(/^[a-zA-Z0-9_]*$/),
+    containerType ContainerType required
 }
-
 entity Registry{
     amount Integer required
 }
 relationship OneToMany {
-    Product to Registry{product(lote) required},
+    Product to Registry{product(lote) required}
+}
+
+relationship OneToMany {
     Section to Registry{section(productType) required}
 }
-// relationship ManyToOne {
-//     Product{section(productType) required} to Section
-// }
+
+paginate Product , Section, Registry with pagination
 //search Product,Section with elasticsearch
 // filter Product, Section, Registry

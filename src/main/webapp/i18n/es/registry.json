@@ -1,0 +1,26 @@
+{
+  "medmorInventoryApp": {
+    "registry": {
+      "home": {
+        "title": "Registros",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Registro",
+        "createOrEditLabel": "Crear o editar Registro",
+        "notFound": "Ningún Registro encontrado"
+      },
+      "created": "Un nuevo Registro ha sido creado con el identificador {{ param }}",
+      "updated": "Un Registry ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Registry ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Registro {{ id }}?"
+      },
+      "detail": {
+        "title": "Registro"
+      },
+      "id": "ID",
+      "amount": "Cantidad",
+      "product": "Producto",
+      "section": "Sección"
+    }
+  }
+}

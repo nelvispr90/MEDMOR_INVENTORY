@@ -1,0 +1,38 @@
+{
+  "name": "Registry",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "registry",
+      "relationshipValidateRules": "required",
+      "relationshipName": "product",
+      "otherEntityField": "lote"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "section",
+      "otherEntityRelationshipName": "registry",
+      "relationshipValidateRules": "required",
+      "relationshipName": "section",
+      "otherEntityField": "productType"
+    }
+  ],
+  "entityTableName": "registry",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220311143615"
+}

@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="product">
+      <h2 data-cy="productDetailsHeading"><span jhiTranslate="medmorInventoryApp.product.detail.title">Product</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ product.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="medmorInventoryApp.product.productSize">Product Size</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'medmorInventoryApp.ProductSize.' + product.productSize }}">{{ product.productSize }}</span>
+        </dd>
+        <dt><span jhiTranslate="medmorInventoryApp.product.color">Color</span></dt>
+        <dd>
+          <span>{{ product.color }}</span>
+        </dd>
+        <dt><span jhiTranslate="medmorInventoryApp.product.price">Price</span></dt>
+        <dd>
+          <span>{{ product.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="medmorInventoryApp.product.fragile">Fragile</span></dt>
+        <dd>
+          <span>{{ product.fragile }}</span>
+        </dd>
+        <dt><span jhiTranslate="medmorInventoryApp.product.lote">Lote</span></dt>
+        <dd>
+          <span>{{ product.lote }}</span>
+        </dd>
+        <dt><span jhiTranslate="medmorInventoryApp.product.containerType">Container Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'medmorInventoryApp.ContainerType.' + product.containerType }}">{{ product.containerType }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/product', product.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

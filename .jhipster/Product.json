@@ -1,0 +1,56 @@
+{
+  "name": "Product",
+  "fields": [
+    {
+      "fieldName": "productSize",
+      "fieldType": "ProductSize",
+      "fieldValues": "S,M,L,XL,XXL",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "color",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fragile",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lote",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "pattern"],
+      "fieldValidateRulesPattern": "^[a-zA-Z0-9_]*$"
+    },
+    {
+      "fieldName": "containerType",
+      "fieldType": "ContainerType",
+      "fieldValues": "Cardboard,Plastic,Glass,Nylon",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "registry",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "registry"
+    }
+  ],
+  "entityTableName": "product",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220311143614"
+}

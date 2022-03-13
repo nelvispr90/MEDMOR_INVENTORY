@@ -1,0 +1,31 @@
+{
+  "medmorInventoryApp": {
+    "product": {
+      "home": {
+        "title": "Productos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Producto",
+        "createOrEditLabel": "Crear o editar Producto",
+        "notFound": "Ningún Producto encontrado"
+      },
+      "created": "Un nuevo Producto ha sido creado con el identificador {{ param }}",
+      "updated": "Un Product ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Product ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Producto {{ id }}?",
+        "warning":"Si hay productos en existencia para este producto, el sistema arrojará un error y evitará la acción."
+      },
+      "detail": {
+        "title": "Producto"
+      },
+      "id": "ID",
+      "productSize": "Tamaño",
+      "color": "Color",
+      "price": "Precio",
+      "fragile": "Frágil",
+      "lote": "Lote",
+      "containerType": "Tipo Envase ",
+      "registry": "Registro"
+    }
+  }
+}

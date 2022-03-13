@@ -41,6 +41,8 @@
     "packageFolder": "com/medmor/inventory",
     "jwtSecretKey": "NDMxYjdhNGRmZjI5NTg3NDc2ZTYyMzM5ZjNmODVkZjVjMDBiNmFjZTE2MmQ0OTY5YjQ3NTNiMTNmZDY1OTQ1ZGU0ODZjNzZiZjE2NjRiMDE4OWVjMjE5Y2EyOWNjOTJjNDExNWUwNTEwNTZhMzYwY2FkNzg5YWY4Yjc5ZDI0YTk=",
     "clientPackageManager": "npm",
-    "languages": ["es", "en"]
+    "languages": ["es", "en"],
+    "entities": ["Section", "Product", "Registry"],
+    "lastLiquibaseTimestamp": 1647009375000
   }
 }

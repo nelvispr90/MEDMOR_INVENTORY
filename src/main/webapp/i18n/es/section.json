@@ -1,0 +1,27 @@
+{
+  "medmorInventoryApp": {
+    "section": {
+      "home": {
+        "title": "Secciones",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Sección",
+        "createOrEditLabel": "Crear o editar Sección",
+        "notFound": "Ningúna Sección encontrado"
+      },
+      "created": "Un nuevo Sección ha sido creado con el identificador {{ param }}",
+      "updated": "Un Sección ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Sección ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Sección {{ id }}?",
+        "warning":"Si la sección contiene productos, el sistema arrojará un error y evitará la acción."
+      },
+      "detail": {
+        "title": "Sección"
+      },
+      "id": "ID",
+      "area": "Área",
+      "productType": "Tipo Producto",
+      "registry": "Registro"
+    }
+  }
+}
